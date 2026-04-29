@@ -1,1 +1,19 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Connexion</title>
+</head>
+<body class="form-page">
+    <div class="form-wrapper" style="max-width:300px">
+        <h1>Login Admin</h1>
+        <form method="POST">
+            <input type="text" name="username" placeholder="Utilisateur" required>
+            <input type="password" name="password" placeholder="Mot de passe" required>
+            <button type="submit" class="btn-submit">SE CONNECTER</button>
+        </form>
+    </div>
+</body>
+</html>
 
