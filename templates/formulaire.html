@@ -1,1 +1,45 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription - TP INF232</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body class="form-page">
+    <div class="form-wrapper">
+        <div class="badge">SESSION 2026</div>
+        <h1>Fiche Étudiant</h1>
+        
+        {% with messages = get_flashed_messages(with_categories=true) %}
+          {% if messages %}
+            {% for cat, msg in messages %}<div class="flash {{cat}}">{{msg}}</div>{% endfor %}
+          {% endif %}
+        {% endwith %}
+
+        <form action="/submit" method="POST">
+            <input type="text" name="nom" placeholder="Nom Complet" required>
+            <input type="number" name="age" placeholder="Âge" required>
+            
+            <select name="niveau" required>
+                <option value="">-- Niveau --</option>
+                <option>Licence 1</option><option>Licence 2</option><option>Licence 3</option>
+            </select>
+
+            <select name="filiere" required>
+                <option value="">-- Filière --</option>
+                <option>Informatique</option><option>IA & Data</option><option>Cybersécurité</option>
+            </select>
+
+            <div style="display:flex; gap:10px;">
+                <input type="number" step="0.1" name="note_maths" placeholder="Maths" required>
+                <input type="number" step="0.1" name="note_info" placeholder="Info" required>
+                <input type="number" step="0.1" name="note_anglais" placeholder="Anglais" required>
+            </div>
+
+            <button type="submit" class="btn-submit">ENREGISTRER</button>
+        </form>
+        <p style="text-align:center;"><a href="/dashboard" style="color:var(--muted)">Espace Admin</a></p>
+    </div>
+</body>
+</html>
 
