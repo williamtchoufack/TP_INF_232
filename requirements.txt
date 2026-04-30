@@ -1,0 +1,9 @@
+Flask
+psycopg2-binary
+pandas
+openpyxl
+matplotlib
+numpy
+python-dotenv
+dj-database-url
+gunicorn
